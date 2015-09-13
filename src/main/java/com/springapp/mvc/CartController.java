@@ -25,7 +25,7 @@ public class CartController {
     }
 
 
-    @RequestMapping(value = "/addProdukt", method = RequestMethod.POST)
+    @RequestMapping(value = "addProdukt", method = RequestMethod.POST)
     public String addProdukt(@ModelAttribute Vare vare){
         vareRepository.save(vare);
         return "redirect:/";
