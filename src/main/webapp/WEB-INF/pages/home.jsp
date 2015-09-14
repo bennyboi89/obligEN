@@ -14,9 +14,22 @@
 </c:forEach>
 
 <h1>Legge til handlelisten</h1>
-<form method="post" action="addProdukt">
-	Navn: <input type="text" name="Navn" /> Pris: <input type="text" name="pris" />
-	<button>Legge til</button>
+<form method="POST" action="addProdukt">
+	Navn: <input type="text" name="navn" />
+	Pris: <input type="text" name="pris" />
+<button>Legge til</button>
+
+
+<table border="1">
+    <c:forEach var="vare" items="${vareListe}">
+        <tr>
+            <td>${vare.navn}</td><td>
+            <input type="button" value="Slette" onclick="window.location='/deleteProdukt?id=${vare.id}'"/></td>
+        </tr>
+    </c:forEach>
+</table>
+
+
 </form>
 </body>
 </html>
